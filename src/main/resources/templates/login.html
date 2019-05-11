@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="js_css_inc :: common_header(~{::title},~{::link})">
+    <title>Login</title>
+    <meta charset="utf-8">
+    <!-- #include file = "static/js_css_inc.html" -->
+    <link href="/css/style2.css" rel='stylesheet' type='text/css'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+</head>
+<script th:inline="javascript"> var ctx = [[@{/}]]; </script>
+<body>
+<!-----start-main---->
+<div class="main">
+    <div class="login-form">
+        <h1></h1>
+        <div class="head">
+            <img src="/images/user.png" alt=""/>
+        </div>
+        <form>
+            <input type="text" id="userName" name="userName" class="text" placeholder='用户名' value="USERNAME" onfocus="this.value = '';"
+                   onblur="if (this.value == '') {this.value = 'yff';}">
+            <input type="password"  id="passWord" name="passWord"  value="Password" placeholder='密码' onfocus="this.value = '';"
+                   onblur="if (this.value == '') {this.value = 'Password';}">
+            <div class="submit">
+                <input type="button" onclick="login()" value="LOGIN">
+            </div>
+            <p><a href="#">Forgot Password ?</a></p>
+        </form>
+    </div>
+    <!--//End-login-form-->
+    <!-----start-copyright---->
+    <div class="copy-right">
+        <!--<p>Copyright &copy; 2014.Company name All rights reserved.<a target="_blank" href="http://www.freemoban.com/">www.freemoban.com</a></p>-->
+    </div>
+    <!-----//end-copyright---->
+</div>
+<!-----//end-main---->
+
+
+</body>
+<script>
+    function login(){
+        $.ajax({
+            type: "post",
+            url: "/index",
+            success: function(result) {
+                location.href = "/index";
+            }
+        })
+    }
+
+</script>
+</html>
