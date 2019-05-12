@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="common/common_header :: common_header(~{::title},~{::link})">
+    <title>用户首页</title>
+    <link>
+
+</head>
+<body class="fix-header card-no-border">
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+    </div>
+        <div id="toolbar" class="btn-group">
+            <button id="btn_add" type="button" class="fa fa-plus-square" th:text="新增" />
+            <button id="btn_edit" type="button" class="fa fa-pencil-square" th:text="修改" />
+            <button id="btn_delete" type="button" class="fa fa-minus-square" th:text="刪除"/>
+        </div>
+        <table id="tb_user" />
+
+</body>
+
+</html>

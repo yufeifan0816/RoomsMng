@@ -1,6 +1,9 @@
 package com.yff.roomsMng.entitys;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
+    private static final long serialVersionUID = 1L;
     private Integer id;
 
     private String userName;
@@ -9,9 +12,8 @@ public class User {
 
     private String realName;
 
-    private String tel;
+    private String tell;
 
-    private String description;
 
     public Integer getId() {
         return id;
@@ -45,20 +47,12 @@ public class User {
         this.realName = realName == null ? null : realName.trim();
     }
 
-    public String getTel() {
-        return tel;
+    public String getTell() {
+        return tell;
     }
 
-    public void setTel(String tel) {
-        this.tel = tel == null ? null : tel.trim();
-    }
-
-    public String getDesc() {
-        return description;
-    }
-
-    public void setDesc(String desc) {
-        this.description = desc == null ? null : desc.trim();
+    public void setTell(String tell) {
+        this.tell = tell;
     }
 
     @Override
@@ -77,8 +71,7 @@ public class User {
             && (this.getUserName() == null ? other.getUserName() == null : this.getUserName().equals(other.getUserName()))
             && (this.getPassWord() == null ? other.getPassWord() == null : this.getPassWord().equals(other.getPassWord()))
             && (this.getRealName() == null ? other.getRealName() == null : this.getRealName().equals(other.getRealName()))
-            && (this.getTel() == null ? other.getTel() == null : this.getTel().equals(other.getTel()))
-            && (this.getDesc() == null ? other.getDesc() == null : this.getDesc().equals(other.getDesc()));
+            && (this.getTell() == null ? other.getTell() == null : this.getTell().equals(other.getTell()));
     }
 
     @Override
@@ -89,8 +82,7 @@ public class User {
         result = prime * result + ((getUserName() == null) ? 0 : getUserName().hashCode());
         result = prime * result + ((getPassWord() == null) ? 0 : getPassWord().hashCode());
         result = prime * result + ((getRealName() == null) ? 0 : getRealName().hashCode());
-        result = prime * result + ((getTel() == null) ? 0 : getTel().hashCode());
-        result = prime * result + ((getDesc() == null) ? 0 : getDesc().hashCode());
+        result = prime * result + ((getTell() == null) ? 0 : getTell().hashCode());
         return result;
     }
 }
